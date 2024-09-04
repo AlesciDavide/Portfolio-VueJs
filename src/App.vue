@@ -1,11 +1,13 @@
 <script>
-import Header from './components/Header.vue'
+import AppHeader from './components/AppHeader.vue'
 import sliderUno from './components/sliderUno.vue'
+import AppMain from './components/pages/AppMain.vue';
 
 export default{
   components:{
-    Header,
+    AppHeader,
     sliderUno,
+    AppMain,
 
   },
     data() {
@@ -17,8 +19,9 @@ export default{
 </script>
 
 <template>
-  <Header />
-  <sliderUno />
+  <AppHeader />
+  <Router-view></Router-view>
+
 </template>
 
 <style scoped>
