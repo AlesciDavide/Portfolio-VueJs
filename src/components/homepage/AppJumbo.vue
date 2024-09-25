@@ -2,12 +2,16 @@
 import { store } from '../../store.js';
 
 
+
+
 export default {
     data() {
         return {
             store,
         };
     },
+    components:{
+  },
 };
 </script>
 
@@ -38,7 +42,8 @@ export default {
             <div>
                 <img src="../../assets/imgJumboHome/imgProfile.png" alt="">
             </div>
-            <div></div>
+            <div>
+            </div>
         </article>
     </section>
 </template>
@@ -96,20 +101,27 @@ section {
 
             div {
                 width: 100vw;
+            }
 
-                div:nth-child(1) {
-                    order: 2;
+            div:nth-child(1) {
+                order: 3;
+            }
+
+            div:nth-child(2) {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div:nth-child(3) {
+                order: 2;
+
+                img {
+                    height: 150px;
+                    width: 150px;
                 }
 
-                div:nth-child(2) {
-                    order: 1;
-                    justify-content: center;
-                    display: flex;
-                }
-
-                div:nth-child(3) {
-                    order: 3;
-                }
             }
         }
     }
