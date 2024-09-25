@@ -28,5 +28,17 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-
+    header{
+        nav{
+            
+            width: 100vw;
+            background-color: aqua;
+            ul{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: row;
+            };
+        }
+    }
 </style>

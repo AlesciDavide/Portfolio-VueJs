@@ -24,6 +24,8 @@ export default{
 
 </template>
 
-<style scoped>
+<style lang="scss">
+@import url("/styles/general.scss");
+@import url("/styles/partials/_variables.scss");
 
 </style>
