@@ -13,7 +13,7 @@ export default {
 
 <template>
     <section>
-        <article class="jumbo dFlexCenter">
+        <article class="jumbo">
             <div>
                 <h1>Profilo</h1>
                 <p>
@@ -35,7 +35,7 @@ export default {
                     dello sviluppo web.
                 </p>
             </div>
-            <div class="dFlexCenter">
+            <div>
                 <img src="../../assets/imgJumboHome/imgProfile.png" alt="">
             </div>
             <div></div>
@@ -49,23 +49,31 @@ section {
     height: calc(60vh - 55px);
 
     article.jumbo {
-        div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
             width: 33vw;
         }
-        div:nth-child(1){
-            h1{
+
+        div:nth-child(1) {
+            h1 {
                 text-align: center;
                 font-size: 2.5rem;
                 color: white;
                 margin-bottom: 1rem;
             }
-            p{
+
+            p {
                 text-align: justify;
                 line-height: 1.5rem;
                 font-size: 1.2rem;
             }
+
             padding: 0 30px;
         }
+
         div:nth-child(2) {
             height: 100%;
 
@@ -76,6 +84,32 @@ section {
                 position: relative;
                 box-shadow: 0px 0px 10px 2px #e4d9e9;
                 border-radius: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        article.jumbo {
+            flex-direction: column;
+
+            div {
+                width: 100vw;
+
+                div:nth-child(1) {
+                    order: 2;
+                }
+
+                div:nth-child(2) {
+                    order: 1;
+                    justify-content: center;
+                    display: flex;
+                }
+
+                div:nth-child(3) {
+                    order: 3;
+                }
             }
         }
     }
