@@ -28,16 +28,24 @@ export default{
 </template>
 
 <style lang="scss" scoped>
+
+
     header{
         nav{
             
             width: 100vw;
-            background-color: aqua;
+            background-color: #9F8DA6;
             ul{
                 display: flex;
-                justify-content: space-around;
+                justify-content: flex-end;
                 align-items: center;
                 flex-direction: row;
+                
+                li{
+                    font-size: 2rem;
+                    padding: .5rem 0;
+                    margin: 0 2rem;
+                }
             };
         }
     }
