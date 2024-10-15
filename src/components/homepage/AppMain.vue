@@ -14,6 +14,8 @@ export default {
 </script>
 
 <template>
+    <div class="container">
+
     <section>
         <article class="sideBar">
             <div>
@@ -43,23 +45,38 @@ export default {
                         tecniche e gestionali nel settore
                         dello sviluppo web.</p>
                 </span>
+                <span>
+                    <h1>link</h1>
+                </span>
 
             </div>
-            <div>
+            <div class="myTec">
                 <h2>Tecnologie</h2>
                 <span v-for="tec in store.iconArray[0]" :key="tec">
                     <img class="tecImg" :src="tec" alt="">
                 </span>
-
+                <span v-for="tec in store.iconArray[1]" :key="tec">
+                    <img class="tecImg" :src="tec" alt="">
+                </span>
             </div>
         </article>
-        <article class="myBody">
-
-        </article>
     </section>
+    <section class="myBody">
+        <h1>ciaoooo</h1>
+    </section>
+</div>
 </template>
 
 <style lang="scss" scoped>
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.myBody{
+    margin-top: 54px;
+    height: calc(100vh - 54px) ;
+    width: calc(100% - 350px);
+}
 .sideBar {
     width: 350px;
     height: 100vh;
