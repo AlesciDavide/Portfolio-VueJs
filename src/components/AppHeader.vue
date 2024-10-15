@@ -1,9 +1,9 @@
 <script>
-import {store} from '../store.js';
+import { store } from '../store.js';
 
-export default{
+export default {
     data() {
-        return{
+        return {
             store,
         }
     },
@@ -28,25 +28,30 @@ export default{
 </template>
 
 <style lang="scss" scoped>
+header {
+    nav {
+        position: fixed;
+        width: 100vw;
+        background: linear-gradient(135deg,
+                #2d354a 0%,
+                #2d354a 70%,
+                #7d8eb8 70%,
+                #7d8eb8 100%);
 
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
 
-    header{
-        nav{
-            
-            width: 100vw;
-            background-color: #9F8DA6;
-            ul{
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                flex-direction: row;
-                
-                li{
-                    font-size: 2rem;
-                    padding: .5rem 0;
-                    margin: 0 2rem;
-                }
-            };
+            li {
+                font-size: 2rem;
+                padding: .5rem 0;
+                margin: 0 2rem;
+            }
         }
+
+        ;
     }
+}
 </style>

@@ -5,14 +5,18 @@ export const store = reactive({
         "Home",
         "portfolio",
     ],
-    iconArray : [
+    iconArray : [[
+
         "/src/assets/img/icons-javascript.svg",
+        "/src/assets/img/icons-php.svg",
         "/src/assets/img/icons-html.svg",
         "/src/assets/img/icons-css.svg",
-        "/src/assets/img/icons-php.svg",
+    ],[
+
         "/src/assets/img/icons-bootstrap.svg",
         "/src/assets/img/icons-scss.svg",
         "/src/assets/img/icons-vuejs.svg",
         "/src/assets/img/icons-laravel.svg",
+    ]
     ],
 });

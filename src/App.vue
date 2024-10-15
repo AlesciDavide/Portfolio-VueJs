@@ -21,7 +21,7 @@ export default{
 </script>
 
 <template>
-  
+  <AppHeader />
   <Router-view></Router-view>
 
 </template>
