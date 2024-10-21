@@ -14,4 +14,9 @@ export const store = reactive({
       { nome: "Laravel", icon: "/src/assets/img/icons-laravel.svg" },
     
   ],
+  linkSocial: [
+    {link: "https://github.com/AlesciDavide", icon: "myIcon fa-brands fa-github"},
+    {link: "https://www.linkedin.com/in/sebastiano-davide-alesci-609450314/", icon: "myIcon fa-brands fa-linkedin"},
+    {link: "mailto:davi.alesci@gmail.com", icon: "myIcon fa-regular fa-envelope"},
+  ]
 });

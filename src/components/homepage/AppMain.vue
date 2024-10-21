@@ -46,8 +46,14 @@ export default {
                             dello sviluppo web.</p>
                     </span>
                     <span>
-                        <h1>link</h1>
+                        <ul class="linkUl">
+                            <li v-for="social in store.linkSocial" :key="social.link">
+                                <a :href="social.link"><i :class="social.icon"></i></a>
+                            </li>
+                        </ul>
+             
                     </span>
+
 
                 </div>
                 <div class="myTec">
@@ -68,14 +74,10 @@ export default {
                     <h1>
                         Full Stack Web Developer
                     </h1>
-                    <p>Sono un Jr. Full Stack Web Developer con la passione per lo sviluppo web, durante il mio percorso
-                        ho consolidato le mie basi in matematica e informatica acquisite durante gli studi in ingegneria
-                        elettronica. Ho esperienza come inventarista e team leader, ruoli in cui ho gestito con successo
-                        squadre di lavoro per diversi negozi nella mia città. Sono ora alla ricerca di opportunità per
-                        applicare le mie competenze tecniche e gestionali nel settore dello sviluppo web.</p>
+                    <p></p>
                 </div>
 
-                <!-- <img src="/src/assets/img/imgProfiloS.png" alt=""> -->
+                <button class="mybutton"><a href="/src/assets/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
 
             </article>
             <article>
@@ -91,6 +93,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.myIcon{
+    font-size: 3rem;
+}
+.linkUl{
+    display: flex;
+    a:active{
+        color: #4d5b7e;
+        & i{
+
+            transform: scale(0.95);
+        }
+    }
+}
+.mybutton{
+    padding: 1em 2em;
+    border: none;
+    background-color: #2d354a;
+    color: white;
+    border-radius: .25rem;
+    margin: 1rem 50px;
+    cursor: pointer;
+    a{
+        font-size: 1rem;
+    }
+}
+.mybutton:hover{
+    background-color: #3b4661;
+}
+.mybutton:active{
+    transform: scale(0.98);
+}
 .container {
     display: flex;
     justify-content: space-between;
@@ -108,9 +141,9 @@ export default {
         height: 40vh;
         background-color: #98a5c7;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         position: relative;
 
         div {
@@ -230,20 +263,24 @@ export default {
         flex-direction: column;
 
         img {
-            margin-bottom: .5rem;
+            margin-bottom: 1rem;
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             text-align: start;
-
+            
         }
 
     }
 
     span:last-child {
+        
         h2 {
             margin-bottom: .5rem;
+        }
+        a{
+            margin: 0 1rem;
         }
     }
 
