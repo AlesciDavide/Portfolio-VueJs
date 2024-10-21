@@ -52,12 +52,13 @@ export default {
                 </div>
                 <div class="myTec">
                     <h2>Tecnologie</h2>
-                    <span v-for="tec in store.iconArray[0]" :key="tec">
-                        <img class="tecImg" :src="tec" alt="">
-                    </span>
-                    <span v-for="tec in store.iconArray[1]" :key="tec">
-                        <img class="tecImg" :src="tec" alt="">
-                    </span>
+                    <div>
+                        <span class="boxTec" v-for="tec in store.iconArray" :key="tec">
+                            <p> {{ tec.nome }}</p>
+                            <img class="tecImg" :src="tec.icon" :alt="tec.nome">
+                        </span>
+                    </div>
+
                 </div>
             </article>
         </section>
@@ -67,10 +68,14 @@ export default {
                     <h1>
                         Full Stack Web Developer
                     </h1>
-                    <p>Sono un Jr. Full Stack Web Developer con la passione per lo sviluppo web, durante il mio percorso ho consolidato le mie basi in matematica e informatica acquisite durante gli studi in ingegneria elettronica. Ho esperienza come inventarista e team leader, ruoli in cui ho gestito con successo squadre di lavoro per diversi negozi nella mia città. Sono ora alla ricerca di opportunità per applicare le mie competenze tecniche e gestionali nel settore dello sviluppo web.</p>
+                    <p>Sono un Jr. Full Stack Web Developer con la passione per lo sviluppo web, durante il mio percorso
+                        ho consolidato le mie basi in matematica e informatica acquisite durante gli studi in ingegneria
+                        elettronica. Ho esperienza come inventarista e team leader, ruoli in cui ho gestito con successo
+                        squadre di lavoro per diversi negozi nella mia città. Sono ora alla ricerca di opportunità per
+                        applicare le mie competenze tecniche e gestionali nel settore dello sviluppo web.</p>
                 </div>
 
-                <img src="/src/assets/img/imgProfiloS.png" alt="">
+                <!-- <img src="/src/assets/img/imgProfiloS.png" alt=""> -->
 
             </article>
             <article>
@@ -92,8 +97,8 @@ export default {
 }
 
 .myBody {
-    margin-top: 54px;
-    height: calc(100vh - 54px);
+    margin-top: 50px;
+    height: calc(100vh - 50px);
     width: calc(100% - 350px);
     overflow: scroll;
     position: relative;
@@ -107,24 +112,28 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-            div{
-                padding: 0 50px;
-                h1{
-                    font-size: 3rem;
-                }
-                p{
-                    width: 70%;
-                    font-size: 1.3rem;
-                }
+
+        div {
+            padding: 0 50px;
+
+            h1 {
+                font-size: 3rem;
             }
-            img{
-                width: 100%;
-                /* margin-bottom: 1rem; */
-                margin-right: 4rem;
-                
-                filter: drop-shadow(12px 8px 10px white);
+
+            p {
+                width: 70%;
+                font-size: 1.3rem;
             }
-        
+        }
+
+        img {
+            width: 100%;
+            /* margin-bottom: 1rem; */
+            margin-right: 4rem;
+
+            filter: drop-shadow(12px 8px 10px white);
+        }
+
     }
 
     & article:nth-child(2) {
@@ -137,22 +146,22 @@ export default {
 
         div:nth-child(1) {
             background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
             width: 25%;
             rotate: 2deg;
         }
 
         div:nth-child(2) {
             background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
             width: 25%;
             rotate: -2deg;
         }
@@ -161,22 +170,22 @@ export default {
             rotate: 2deg;
             width: 25%;
             background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
 
         div:nth-child(4) {
             rotate: -2deg;
             width: 25%;
             background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
     }
 }
@@ -184,7 +193,8 @@ export default {
 .sideBar {
     width: 350px;
     height: 100vh;
-
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -200,7 +210,7 @@ export default {
 }
 
 .tecImg {
-    height: 20px;
+    height: 30px;
     aspect-ratio: 1/1;
 }
 
@@ -210,7 +220,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
+    height: 75vh;
     width: 350px;
     padding: 2rem 20px;
 
@@ -244,9 +254,40 @@ export default {
 }
 
 .sideBar div:last-child {
-    height: 20vh;
+    height: 25vh;
     width: 350px;
 
     background-color: #1f2231;
+}
+
+.myTec {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        span {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 1rem ;
+            width: 15%;
+
+            .tecImg {
+                margin: .4rem 0;
+            }
+
+        }
+    }
+
 }
 </style>
