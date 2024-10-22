@@ -80,13 +80,42 @@ export default {
                 <button class="mybutton"><a href="/src/assets/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
 
             </article>
+            
             <article>
+                <div class="routerLink">
+                    <router-link to="/project">Vedi tutti i progetti --></router-link>
+                </div>
                 <div>
+                    <div class="myProject">
+                        <span>
+                            <h3>vite-yu-gi-oh</h3>
+                            <p>progetto vite yo-gi-oh</p>
+                        </span>
+                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
+                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
+                        </a>
+                    </div>
+                    <div class="myProject">
+                        <span>
+                            <h3>vite-yu-gi-oh</h3>
+                            <p></p>
+                        </span>
+                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
+                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
+                        </a>
+                    </div>
+                    <div class="myProject">
+                        <span>
+                            <h3>vite-yu-gi-oh</h3>
+                            <p></p>
+                        </span>
+                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
+                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
+                        </a>
+                    </div>
 
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
+                
             </article>
         </section>
     </div>
@@ -138,7 +167,7 @@ export default {
 
     & article:nth-child(1) {
         width: 100%;
-        height: 40vh;
+        height: 35vh;
         background-color: #98a5c7;
         display: flex;
         flex-direction: column;
@@ -171,13 +200,21 @@ export default {
 
     & article:nth-child(2) {
         display: flex;
-        position: absolute;
-        top: 37vh;
-        right: 0;
-        height: 20vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #7d8eb8;
+        flex-wrap: wrap;
         width: 100%;
-
-        div:nth-child(1) {
+        height: fit-content;
+        .routerLink{
+                font-size: 2rem;
+                margin-top: .5rem;
+        }
+        div{
+            display: flex;
+        }
+       /*  div:nth-child(1) {
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
                 rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -186,6 +223,11 @@ export default {
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
             width: 25%;
             rotate: 2deg;
+            a{
+                img{
+                    width: 80%;
+                }
+            }
         }
 
         div:nth-child(2) {
@@ -219,10 +261,38 @@ export default {
                 rgba(0, 0, 0, 0.12) 0px 4px 6px,
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        } */
+        .myProject{
+            width: 400px;
+            height: 20vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid black;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            margin: 1rem;
+            background-color: #7d8eb8;
+            transition: transform 1s;
+
+            a{
+                width: 60%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .myProject:hover{
+
+            transform: scale(1.2);
+            
+    
         }
     }
 }
-
 .sideBar {
     width: 350px;
     height: 100vh;
