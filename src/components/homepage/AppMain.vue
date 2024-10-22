@@ -97,11 +97,11 @@ export default {
                     </div>
                     <div class="myProject">
                         <span>
-                            <h3>vite-yu-gi-oh</h3>
+                            <h3>Dashboard bootstrap</h3>
                             <p></p>
                         </span>
-                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
-                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
+                        <a href="https://alescidavide.github.io/html-css-bootstrap-dashboard/">
+                            <img src="/src/assets/img/Dashboard bootstrap.png" alt="Dashboard bootstrap">
                         </a>
                     </div>
                     <div class="myProject">
@@ -275,7 +275,8 @@ export default {
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
             margin: 1rem;
-            background-color: #7d8eb8;
+            background-color: #2d354a;
+            color: white;
             transition: transform 1s;
 
             a{
