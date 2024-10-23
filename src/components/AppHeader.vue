@@ -56,4 +56,16 @@ header {
         ;
     }
 }
+
+@media screen and (max-width: 800px){
+    header{
+        nav{
+            background: linear-gradient(135deg,
+                #2d354a 0%,
+                #2d354a 20%,
+                #7d8eb8 20%,
+                #7d8eb8 100%);
+        }
+    }
+}
 </style>
