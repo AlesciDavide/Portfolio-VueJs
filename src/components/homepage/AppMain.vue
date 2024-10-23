@@ -78,7 +78,7 @@ export default {
                     <p></p>
                 </div>
 
-                <button class="mybutton"><a href="/public/cv/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
+                <button class="mybutton"><a href="/cv/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
 
             </article>
             
