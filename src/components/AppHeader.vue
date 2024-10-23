@@ -30,8 +30,10 @@ export default {
 <style lang="scss" scoped>
 header {
     nav {
+        z-index: 5;
         position: fixed;
         width: 100vw;
+        
         background: linear-gradient(135deg,
                 #2d354a 0%,
                 #2d354a 70%,

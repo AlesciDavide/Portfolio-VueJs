@@ -1,23 +1,30 @@
 <script>
 import {store} from '../../store.js';
 
+
 export default{
     data() {
         return{
             store,
             
         }
-    }
-}
+    },
+   }
 </script>
 
 <template>
-    <h1>
-        main project
-    </h1>
+    <section class="bodyProject">
+        <article>
+            <h1>ciao</h1>
+        </article>
+    </section>
 </template>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+.bodyProject{
+    height: 100vh;
+    background-color: aquamarine;
+   
+}
 
 </style>

@@ -20,6 +20,7 @@ export default {
             <article class="sideBar">
                 <div>
                     <span>
+                        <article class="x">x</article>
                         <img class="imgProfilo" src="/src/assets/img/imgProfilo.png" alt="">
                         <h1>Sebastiano Davide Alesci</h1>
 
@@ -86,31 +87,13 @@ export default {
                     <router-link to="/project">Vedi tutti i progetti --></router-link>
                 </div>
                 <div>
-                    <div class="myProject">
-                        <span>
-                            <h3>vite-yu-gi-oh</h3>
-                            <p>progetto vite yo-gi-oh</p>
-                        </span>
-                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
-                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
-                        </a>
-                    </div>
-                    <div class="myProject">
-                        <span>
-                            <h3>Dashboard bootstrap</h3>
+                    <div v-for="(project, index) in store.projects" :key="index" class="myProject" >
+                        <span v-if="(index < 3)">
+                            <h3>{{ project.nome }}</h3>
                             <p></p>
                         </span>
-                        <a href="https://alescidavide.github.io/html-css-bootstrap-dashboard/">
-                            <img src="/src/assets/img/Dashboard bootstrap.png" alt="Dashboard bootstrap">
-                        </a>
-                    </div>
-                    <div class="myProject">
-                        <span>
-                            <h3>vite-yu-gi-oh</h3>
-                            <p></p>
-                        </span>
-                        <a href="https://alescidavide.github.io/vite-yu-gi-oh/">
-                            <img src="/src/assets/img/vite-yu-gi-oh.png" alt="vite-yu-gi-oh">
+                        <a v-if="(index < 3)" :href="project.link">
+                            <img :src="project.src" :alt="project.nome">
                         </a>
                     </div>
 
@@ -159,24 +142,25 @@ export default {
 }
 
 .myBody {
-    margin-top: 50px;
-    height: calc(100vh - 50px);
-    width: calc(100% - 350px);
+    
+    width: calc(100vw - 350px);
+    
     overflow: scroll;
     position: relative;
 
-    & article:nth-child(1) {
+     article:nth-child(1) {
         width: 100%;
         height: 35vh;
         background-color: #98a5c7;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: start;
+        align-items: center;
         position: relative;
 
         div {
-            padding: 0 50px;
+            padding: 0 30px;
+            text-align: center;
 
             h1 {
                 font-size: 3rem;
@@ -198,13 +182,13 @@ export default {
 
     }
 
-    & article:nth-child(2) {
+     article:nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         background-color: #7d8eb8;
-        flex-wrap: wrap;
+        
         width: 100%;
         height: fit-content;
         .routerLink{
@@ -213,60 +197,17 @@ export default {
         }
         div{
             display: flex;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
         }
-       /*  div:nth-child(1) {
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-                rgba(0, 0, 0, 0.12) 0px -12px 30px,
-                rgba(0, 0, 0, 0.12) 0px 4px 6px,
-                rgba(0, 0, 0, 0.17) 0px 12px 13px,
-                rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            width: 25%;
-            rotate: 2deg;
-            a{
-                img{
-                    width: 80%;
-                }
-            }
-        }
-
-        div:nth-child(2) {
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-                rgba(0, 0, 0, 0.12) 0px -12px 30px,
-                rgba(0, 0, 0, 0.12) 0px 4px 6px,
-                rgba(0, 0, 0, 0.17) 0px 12px 13px,
-                rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            width: 25%;
-            rotate: -2deg;
-        }
-
-        div:nth-child(3) {
-            rotate: 2deg;
-            width: 25%;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-                rgba(0, 0, 0, 0.12) 0px -12px 30px,
-                rgba(0, 0, 0, 0.12) 0px 4px 6px,
-                rgba(0, 0, 0, 0.17) 0px 12px 13px,
-                rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-
-        div:nth-child(4) {
-            rotate: -2deg;
-            width: 25%;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-                rgba(0, 0, 0, 0.12) 0px -12px 30px,
-                rgba(0, 0, 0, 0.12) 0px 4px 6px,
-                rgba(0, 0, 0, 0.17) 0px 12px 13px,
-                rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        } */
+    
         .myProject{
             width: 400px;
             height: 20vh;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            flex-direction: row;
             align-items: center;
             border: 2px solid black;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -278,11 +219,18 @@ export default {
             background-color: #2d354a;
             color: white;
             transition: transform 1s;
-
+            span{
+                width: 40%;
+                text-align: center;
+            }
             a{
                 width: 60%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 img{
-                    width: 100%;
+                    width: 170px;
+                    height: 150px;
                 }
             }
         }
@@ -294,10 +242,16 @@ export default {
         }
     }
 }
+
+/* sidebar */
+.x{
+    display: none;
+}
 .sideBar {
     width: 350px;
     height: 100vh;
     position: fixed;
+    z-index: 6;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -397,5 +351,13 @@ export default {
         }
     }
 
+}
+@media screen and (max-width: 800px){
+    .sideBar{
+        display: none;
+    }
+    .myBody{
+        width: 100vw;
+    }
 }
 </style>
