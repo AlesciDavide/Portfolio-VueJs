@@ -164,6 +164,7 @@ export default {
 
             h1 {
                 font-size: 3rem;
+                margin-top: 1.8rem;
             }
 
             p {
@@ -203,7 +204,7 @@ export default {
         }
     
         .myProject{
-            width: 400px;
+            width: 350px;
             height: 20vh;
             display: flex;
             justify-content: space-between;
@@ -216,6 +217,7 @@ export default {
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
             margin: 1rem;
+
             background-color: #2d354a;
             color: white;
             transition: transform 1s;
@@ -358,6 +360,19 @@ export default {
     }
     .myBody{
         width: 100vw;
+        article:nth-child(2){
+            .myProject{
+
+                margin: 1rem 0;
+            }
+            .myProject:hover{
+
+                transform: scale(1);
+
+
+}
+        }
+        
     }
 }
 </style>
