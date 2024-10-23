@@ -21,7 +21,7 @@ export default {
                 <div>
                     <span>
                         <article class="x">x</article>
-                        <img class="imgProfilo" src="/src/assets/img/imgProfilo.png" alt="">
+                        <img class="imgProfilo" src="/public/img/imgProfilo.png" alt="">
                         <h1>Sebastiano Davide Alesci</h1>
 
                         <!-- <h2>JR FULL-STACK WEB DEVELOPER</h2> -->
@@ -78,7 +78,7 @@ export default {
                     <p></p>
                 </div>
 
-                <button class="mybutton"><a href="/src/assets/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
+                <button class="mybutton"><a href="/public/cv/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
 
             </article>
             
