@@ -21,7 +21,7 @@ export default {
                 <div>
                     <span>
                         <article class="x">x</article>
-                        <img class="imgProfilo" src="/public/img/imgProfilo.png" alt="">
+                        <img class="imgProfilo" src="/img/imgProfilo.png" alt="">
                         <h1>Sebastiano Davide Alesci</h1>
 
                         <!-- <h2>JR FULL-STACK WEB DEVELOPER</h2> -->
