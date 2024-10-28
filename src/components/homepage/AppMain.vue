@@ -8,7 +8,8 @@ export default {
     },
     methods: {
 
-    }
+    },
+
 
 }
 </script>
@@ -157,6 +158,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
+        margin-top: 54px;
 
         div {
             padding: 0 30px;
@@ -164,7 +166,7 @@ export default {
 
             h1 {
                 font-size: 3rem;
-                margin-top: 1.8rem;
+                margin-top: .5rem;
             }
 
             p {
@@ -216,8 +218,8 @@ export default {
                 rgba(0, 0, 0, 0.12) 0px 4px 6px,
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            margin: 1rem;
-
+            margin: 1.2rem 1rem;
+            
             background-color: #2d354a;
             color: white;
             transition: transform 1s;
@@ -231,13 +233,13 @@ export default {
                 align-items: center;
                 justify-content: center;
                 img{
-                    width: 170px;
-                    height: 150px;
+                    width: 95%;
+                    height: 90%;
                 }
             }
         }
         .myProject:hover{
-
+            
             transform: scale(1.2);
             
     
@@ -256,10 +258,12 @@ export default {
     z-index: 6;
     top: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    
+
 }
 
 .imgProfilo {

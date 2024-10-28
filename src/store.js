@@ -35,5 +35,6 @@ export const store = reactive({
       link: "https://alescidavide.github.io/vite-comics/",
       src: "/img/vite-comics.png"
     },
+    
   ]
 });
