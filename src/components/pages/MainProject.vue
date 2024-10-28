@@ -1,30 +1,35 @@
 <script>
-import {store} from '../../store.js';
+import { store } from '../../store.js';
+import Project from '../projectComponents/project.vue';
 
 
-export default{
+
+export default {
     data() {
-        return{
+        return {
             store,
-            
+
         }
     },
-   }
+    components: {
+        Project,
+    },
+}
 </script>
 
 <template>
     <section class="bodyProject">
-        <article>
-            <h1>ciao</h1>
-        </article>
+        <project />
     </section>
 </template>
 
 <style lang="scss">
-.bodyProject{
-    height: 100vh;
-    background-color: aquamarine;
-   
-}
+.bodyProject {
+    
+    height: calc(100vh - 54px);
+   /*  background-color: white; */
+    top: 54px;
+    position: relative;
 
+}
 </style>
