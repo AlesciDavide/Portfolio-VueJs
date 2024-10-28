@@ -157,6 +157,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
+        margin-top: 54px;
 
         div {
             padding: 0 30px;
@@ -164,7 +165,7 @@ export default {
 
             h1 {
                 font-size: 3rem;
-                margin-top: 1.8rem;
+                margin-top: .5rem;
             }
 
             p {
@@ -231,8 +232,8 @@ export default {
                 align-items: center;
                 justify-content: center;
                 img{
-                    width: 170px;
-                    height: 150px;
+                    width: 95%;
+                    height: 90%;
                 }
             }
         }
@@ -256,10 +257,12 @@ export default {
     z-index: 6;
     top: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    
+
 }
 
 .imgProfilo {
