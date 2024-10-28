@@ -158,7 +158,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-        /* margin-top: 54px; */
+        margin-top: 54px;
 
         div {
             padding: 0 30px;
