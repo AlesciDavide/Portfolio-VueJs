@@ -1,6 +1,6 @@
 <script>
 import { store } from '../../store.js';
-import sideBar from '../sideBar.vue';
+import sideBar from './sideBar.vue';
 
 
 export default {
