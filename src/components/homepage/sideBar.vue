@@ -1,71 +1,72 @@
 <script>
 import { store } from '../../store.js';
 export default {
-  data() {
-    return {
-      store,
+    data() {
+        return {
+            store,
+        }
     }
-  }
 }
 </script>
 
 <template>
-  <article class="sideBar" :class="(store.isTrueHbMenu == true) ? 'sidebarMobile' : '' ">
-                <div>
-                    <span>
-                        <article class="x">x</article>
-                        <img class="imgProfilo" src="/img/imgProfilo.png" alt="">
-                        <h1>Sebastiano Davide Alesci</h1>
+    <article class="sideBar" :class="(store.isTrueHbMenu == true) ? 'sidebarMobile' : ''">
+        <div>
+            <span>
+                <article class="x">x</article>
+                <img class="imgProfilo" src="/img/imgProfilo.png" alt="">
+                <h1>Sebastiano Davide Alesci</h1>
 
-                        <!-- <h2>JR FULL-STACK WEB DEVELOPER</h2> -->
+                <!-- <h2>JR FULL-STACK WEB DEVELOPER</h2> -->
 
-                    </span>
-                    <span>
-                        <h2>Profilo</h2>
-                        <p>Sono un Jr. Full Stack Web
-                            Developer con la passione per lo
-                            sviluppo web, durante il mio
-                            percorso ho consolidato le mie basi
-                            in matematica e informatica
-                            acquisite durante gli studi in
-                            ingegneria elettronica. Ho
-                            esperienza come inventarista e
-                            team leader, ruoli in cui ho gestito
-                            con successo squadre di lavoro per
-                            diversi negozi nella mia città. Sono
-                            ora alla ricerca di opportunità per
-                            applicare le mie competenze
-                            tecniche e gestionali nel settore
-                            dello sviluppo web.</p>
-                    </span>
-                    <span>
-                        <ul class="linkUl">
-                            <li v-for="social in store.linkSocial" :key="social.link">
-                                <a :href="social.link"><i :class="social.icon"></i></a>
-                            </li>
-                        </ul>
-             
-                    </span>
+            </span>
+            <span>
+                <h2>Profilo</h2>
+                <p>Sono un Jr. Full Stack Web
+                    Developer con la passione per lo
+                    sviluppo web, durante il mio
+                    percorso ho consolidato le mie basi
+                    in matematica e informatica
+                    acquisite durante gli studi in
+                    ingegneria elettronica. Ho
+                    esperienza come inventarista e
+                    team leader, ruoli in cui ho gestito
+                    con successo squadre di lavoro per
+                    diversi negozi nella mia città. Sono
+                    ora alla ricerca di opportunità per
+                    applicare le mie competenze
+                    tecniche e gestionali nel settore
+                    dello sviluppo web.</p>
+            </span>
+            <span>
+                <ul class="linkUl">
+                    <li v-for="social in store.linkSocial" :key="social.link">
+                        <a :href="social.link"><i :class="social.icon"></i></a>
+                    </li>
+                </ul>
+
+            </span>
 
 
-                </div>
-                <div class="myTec">
-                    <h2>Tecnologie</h2>
-                    <div>
-                        <span class="boxTec" v-for="tec in store.iconArray" :key="tec">
-                            <p> {{ tec.nome }}</p>
-                            <img class="tecImg" :src="tec.icon" :alt="tec.nome">
-                        </span>
-                    </div>
+        </div>
+        <div class="myTec">
+            <h2>Tecnologie</h2>
+            <div>
+                <span class="boxTec" v-for="tec in store.iconArray" :key="tec">
+                    <p> {{ tec.nome }}</p>
+                    <img class="tecImg" :src="tec.icon" :alt="tec.nome">
+                </span>
+            </div>
 
-                </div>
-            </article>
+        </div>
+    </article>
 </template>
 
 <style lang="scss">
-.x{
+.x {
     display: none;
 }
+
 .sideBar {
     width: 350px;
     height: 100vh;
@@ -115,17 +116,18 @@ export default {
         h1 {
             font-size: 1.6rem;
             text-align: start;
-            
+
         }
 
     }
 
     span:last-child {
-        
+
         h2 {
             margin-bottom: .5rem;
         }
-        a{
+
+        a {
             margin: 0 1rem;
         }
     }
@@ -162,7 +164,7 @@ export default {
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin: 1rem ;
+            margin: 1rem;
             width: 15%;
 
             .tecImg {
@@ -173,38 +175,99 @@ export default {
     }
 
 }
-@media screen and (max-width: 800px){
-    .sideBar{
-    display: none;
-    width: 100vw;
+
+@media screen and (max-width: 800px) {
+    .sideBar {
+        display: none;
+        width: 100vw;
 
     }
-    .sidebarMobile{
-    display: block;
-    animation: hb 0.4s linear;
-}
-@keyframes hb{
-    
-    0%{opacity: 0.1;}
-    50%{opacity: 0.5;}
-    100%{opacity: 1;}
-}
-    .myBody{
+
+    .imgProfilo {
+        width: 30%;
+    }
+
+    .sideBar div:last-child {
+        height: 30vh;
+        width: 100%;
+
+        background-color: #1f2231;
+    }
+
+    .sideBar div:first-child {
+        height: 70vh;
+        width: 100%;
+        padding: 1.5rem 20px;
+
+        span:first-child {
+
+            img {
+                margin-bottom: .5rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+                text-align: start;
+
+            }
+
+        }
+
+        span:last-child {
+
+            h2 {
+                margin-bottom: .5rem;
+            }
+
+            a {
+                margin: 0 1rem;
+            }
+        }
+
+        p {
+            font-size: .9rem;
+            text-align: start;
+
+        }
+    }
+
+    .sidebarMobile {
+        display: block;
+        animation: hb 0.4s linear;
+    }
+
+    @keyframes hb {
+
+        0% {
+            opacity: 0.1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .myBody {
         width: 100vw;
-        article:nth-child(2){
-            .myProject{
+
+        article:nth-child(2) {
+            .myProject {
 
                 margin: 1rem 0;
             }
-            .myProject:hover{
+
+            .myProject:hover {
 
                 transform: scale(1);
 
 
-}
+            }
         }
-        
+
     }
 }
-
 </style>
