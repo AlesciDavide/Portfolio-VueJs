@@ -2,14 +2,14 @@ import { reactive } from "vue";
 
 export const store = reactive({
   linkHeader: ["Home", "portfolio"],
-
+  isTrueHbMenu : false,
   iconArray: [
       { nome: "JavaScript", icon: "/img/icons-javascript.svg" },
       { nome: "PHP", icon: "/img/icons-php.svg" },
       { nome: "HTML5", icon: "/img/icons-html.svg" },
       { nome: "CSS", icon: "/img/icons-css.svg" },
       { nome: "Bootstrap", icon: "/img/icons-bootstrap.svg" },
-      { nome: "SCSS", icon: "/img/icons-scss.svg" },
+      { nome: "SASS", icon: "/img/icons-scss.svg" },
       { nome: "VueJs", icon: "/img/icons-vuejs.svg" },
       { nome: "Laravel", icon: "/img/icons-laravel.svg" },
     

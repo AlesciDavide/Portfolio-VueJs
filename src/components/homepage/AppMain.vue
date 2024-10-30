@@ -18,7 +18,7 @@ export default {
     <div class="container">
 
         <section>
-            <article class="sideBar">
+            <article class="sideBar" :class="(store.isTrueHbMenu == true) ? 'sidebarMobile' : '' ">
                 <div>
                     <span>
                         <article class="x">x</article>
@@ -262,9 +262,9 @@ export default {
     align-items: center;
     flex-direction: column;
     color: white;
-    
-
 }
+
+
 
 .imgProfilo {
     width: 50%;
@@ -285,7 +285,7 @@ export default {
     align-items: center;
     flex-direction: column;
     height: 75vh;
-    width: 350px;
+    width: 100%;
     padding: 2rem 20px;
 
     span:first-child {
@@ -323,7 +323,7 @@ export default {
 
 .sideBar div:last-child {
     height: 25vh;
-    width: 350px;
+    width: 100%;
 
     background-color: #1f2231;
 }
@@ -360,8 +360,22 @@ export default {
 }
 @media screen and (max-width: 800px){
     .sideBar{
-        display: none;
+    display: none;
+    width: 100vw;
+
     }
+    .sidebarMobile{
+    display: block;
+    animation: hb 0.4s linear;
+}
+
+
+@keyframes hb{
+    
+    0%{opacity: 0.1;}
+    50%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
     .myBody{
         width: 100vw;
         article:nth-child(2){
