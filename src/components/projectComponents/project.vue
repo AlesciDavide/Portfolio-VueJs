@@ -12,7 +12,6 @@ export default {
 </script>
 
 <template>
-    <h1 class="titleProject">I miei progetti</h1>
 
     <article v-for="(project, index) in store.projects" :key="index">
         <div>
@@ -31,18 +30,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.titleProject {
-    text-align: center;
-    padding: 1rem 0;
-}
+
 
 article {
     display: flex;
     justify-content: center;
     align-content: center;
     height: 20vh;
-    width: 100vw;
-    margin-bottom: 1rem;
+    width: 500px;
+    margin: 1rem;
     border: 2px solid black;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
         rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -60,7 +56,6 @@ article {
 
         p {
             overflow: hidden;
-            /* make sure it hides the content that overflows */
 
             text-overflow: ellipsis
         }
@@ -74,7 +69,7 @@ article {
 
 
         img {
-            height: 80%;
+            height: 60%;
             display: flex;
             justify-content: center;
 
