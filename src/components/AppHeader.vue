@@ -21,7 +21,8 @@ export default {
 <template>
     <header>
         <div @click="hbMenu" class="hbMenu">
-            <i class="fa-solid fa-bars"></i>
+            <i v-if="store.isTrueHbMenu == false" class="fa-solid fa-bars"></i>
+            <i v-else class="fa-solid fa-xmark"></i>
         </div>
         <nav>
             
@@ -78,7 +79,8 @@ header {
     header{
         .hbMenu{
             display: block;
-            position: absolute;
+            position: fixed;
+
             left: 0;
             top: 0;
             z-index: 7;
