@@ -6,14 +6,25 @@ export default {
     data() {
         return {
             store,
+            activeIndex: null,
         }
-    }
+    },
+    methods: {
+        activeProject(index) {
+      this.activeIndex = this.activeIndex === index ? null : index; 
+    },
+    },
 }
 </script>
 
 <template>
 
-    <article v-for="(project, index) in store.projects" :key="index">
+    <article 
+    @click="activeProject(index)" 
+    :class="{ isActiveProject: activeIndex === index }" 
+    v-for="(project, index) in store.projects" 
+    :key="index"
+    >
         <div>
             <h1>{{ project.nome }}</h1>
             <p>paragrafo del progetto Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum, quos assumenda
@@ -80,5 +91,54 @@ article {
 
 article:nth-child(2n+2) {
     background-color: #7d8eb8;
+}
+
+.isActiveProject{
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div:nth-child(2) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+
+            height: 200px;
+            display: flex;
+            justify-content: center;
+margin: 1rem 0;
+        }
+
+    }
+}
+
+@media screen and (max-width: 800px){
+    
+    .isActiveProject{
+        flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    div:nth-child(2) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+    }
+}
 }
 </style>
