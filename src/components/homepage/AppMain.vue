@@ -1,10 +1,16 @@
 <script>
 import { store } from '../../store.js';
+import sideBar from '../sideBar.vue';
+
+
 export default {
     data() {
         return {
             store,
         }
+    },
+    components: {
+        sideBar,
     },
     methods: {
 
@@ -18,57 +24,8 @@ export default {
     <div class="container">
 
         <section>
-            <article class="sideBar">
-                <div>
-                    <span>
-                        <article class="x">x</article>
-                        <img class="imgProfilo" src="/img/imgProfilo.png" alt="">
-                        <h1>Sebastiano Davide Alesci</h1>
-
-                        <!-- <h2>JR FULL-STACK WEB DEVELOPER</h2> -->
-
-                    </span>
-                    <span>
-
-                        <h2>Profilo</h2>
-                        <p>Sono un Jr. Full Stack Web
-                            Developer con la passione per lo
-                            sviluppo web, durante il mio
-                            percorso ho consolidato le mie basi
-                            in matematica e informatica
-                            acquisite durante gli studi in
-                            ingegneria elettronica. Ho
-                            esperienza come inventarista e
-                            team leader, ruoli in cui ho gestito
-                            con successo squadre di lavoro per
-                            diversi negozi nella mia città. Sono
-                            ora alla ricerca di opportunità per
-                            applicare le mie competenze
-                            tecniche e gestionali nel settore
-                            dello sviluppo web.</p>
-                    </span>
-                    <span>
-                        <ul class="linkUl">
-                            <li v-for="social in store.linkSocial" :key="social.link">
-                                <a :href="social.link"><i :class="social.icon"></i></a>
-                            </li>
-                        </ul>
-             
-                    </span>
-
-
-                </div>
-                <div class="myTec">
-                    <h2>Tecnologie</h2>
-                    <div>
-                        <span class="boxTec" v-for="tec in store.iconArray" :key="tec">
-                            <p> {{ tec.nome }}</p>
-                            <img class="tecImg" :src="tec.icon" :alt="tec.nome">
-                        </span>
-                    </div>
-
-                </div>
-            </article>
+            <sideBar />
+            
         </section>
         <section class="myBody">
             <article>
@@ -79,47 +36,52 @@ export default {
                     <p></p>
                 </div>
 
-                <button class="mybutton"><a href="/cv/AlesciSebastianoDavideCV.pdf" download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
+                <button class="mybutton"><a href="/cv/AlesciSebastianoDavideCV.pdf"
+                        download="AlesciSebastianoDavideCV.pdf">Scarica il mio cv --></a></button>
 
             </article>
-            
+
             <article>
                 <div class="routerLink">
                     <router-link to="/project">Vedi tutti i progetti --></router-link>
                 </div>
                 <div>
-                    <div v-for="(project, index) in store.projects" :key="index" class="myProject" >
-                        <span v-if="(index < 3)">
+                    <div v-for="(project, index) in store.projects.slice(0, 3)" :key="index" class="myProject">
+                        <span>
                             <h3>{{ project.nome }}</h3>
                             <p></p>
                         </span>
-                        <a v-if="(index < 3)" :href="project.link">
+                        <a :href="project.link">
                             <img :src="project.src" :alt="project.nome">
                         </a>
                     </div>
 
                 </div>
-                
+
             </article>
         </section>
     </div>
 </template>
 
-<style lang="scss" scoped>
-.myIcon{
+<style lang="scss">
+.myIcon {
     font-size: 3rem;
 }
-.linkUl{
+
+.linkUl {
     display: flex;
-    a:active{
+
+    a:active {
         color: #4d5b7e;
-        & i{
+
+        & i {
 
             transform: scale(0.95);
         }
     }
 }
-.mybutton{
+
+.mybutton {
     padding: 1em 2em;
     border: none;
     background-color: #2d354a;
@@ -127,29 +89,33 @@ export default {
     border-radius: .25rem;
     margin: 1rem 50px;
     cursor: pointer;
-    a{
+
+    a {
         font-size: 1rem;
     }
 }
-.mybutton:hover{
+
+.mybutton:hover {
     background-color: #3b4661;
 }
-.mybutton:active{
+
+.mybutton:active {
     transform: scale(0.98);
 }
+
 .container {
     display: flex;
     justify-content: space-between;
 }
 
 .myBody {
-    
+
     width: calc(100vw - 350px);
-    
+
     overflow: scroll;
     position: relative;
 
-     article:nth-child(1) {
+    article:nth-child(1) {
         width: 100%;
         height: 35vh;
         background-color: #98a5c7;
@@ -185,27 +151,29 @@ export default {
 
     }
 
-     article:nth-child(2) {
+    article:nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         background-color: #7d8eb8;
-        
+
         width: 100%;
         height: fit-content;
-        .routerLink{
-                font-size: 2rem;
-                margin-top: .5rem;
+
+        .routerLink {
+            font-size: 2rem;
+            margin-top: .5rem;
         }
-        div{
+
+        div {
             display: flex;
             flex-wrap: wrap;
             display: flex;
             justify-content: center;
         }
-    
-        .myProject{
+
+        .myProject {
             width: 350px;
             height: 20vh;
             display: flex;
@@ -219,36 +187,40 @@ export default {
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
             margin: 1.2rem 1rem;
-            
+
             background-color: #2d354a;
             color: white;
             transition: transform 1s;
-            span{
+
+            span {
                 width: 40%;
                 text-align: center;
             }
-            a{
+
+            a {
                 width: 60%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                img{
+
+                img {
                     width: 95%;
                     height: 90%;
                 }
             }
         }
-        .myProject:hover{
-            
+
+        .myProject:hover {
+
             transform: scale(1.2);
-            
-    
+
+
         }
     }
 }
 
-/* sidebar */
-.x{
+/* sidebar 
+/* .x{
     display: none;
 }
 .sideBar {
@@ -262,9 +234,9 @@ export default {
     align-items: center;
     flex-direction: column;
     color: white;
-    
-
 }
+
+
 
 .imgProfilo {
     width: 50%;
@@ -285,7 +257,7 @@ export default {
     align-items: center;
     flex-direction: column;
     height: 75vh;
-    width: 350px;
+    width: 100%;
     padding: 2rem 20px;
 
     span:first-child {
@@ -323,7 +295,7 @@ export default {
 
 .sideBar div:last-child {
     height: 25vh;
-    width: 350px;
+    width: 100%;
 
     background-color: #1f2231;
 }
@@ -358,25 +330,26 @@ export default {
     }
 
 }
-@media screen and (max-width: 800px){
-    .sideBar{
-        display: none;
-    }
-    .myBody{
+    */
+@media screen and (max-width: 800px) {
+    .myBody {
         width: 100vw;
-        article:nth-child(2){
-            .myProject{
+
+        article:nth-child(2) {
+            .myProject {
 
                 margin: 1rem 0;
             }
-            .myProject:hover{
+
+            .myProject:hover {
 
                 transform: scale(1);
 
 
-}
+            }
         }
-        
     }
+
+
 }
 </style>

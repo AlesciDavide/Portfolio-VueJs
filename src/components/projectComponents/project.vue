@@ -6,15 +6,25 @@ export default {
     data() {
         return {
             store,
+            activeIndex: null,
         }
-    }
+    },
+    methods: {
+        activeProject(index) {
+      this.activeIndex = this.activeIndex === index ? null : index; 
+    },
+    },
 }
 </script>
 
 <template>
-    <h1 class="titleProject">I miei progetti</h1>
 
-    <article v-for="(project, index) in store.projects" :key="index">
+    <article 
+    @click="activeProject(index)" 
+    :class="{ isActiveProject: activeIndex === index }" 
+    v-for="(project, index) in store.projects" 
+    :key="index"
+    >
         <div>
             <h1>{{ project.nome }}</h1>
             <p>paragrafo del progetto Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum, quos assumenda
@@ -31,18 +41,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.titleProject {
-    text-align: center;
-    padding: 1rem 0;
-}
+
 
 article {
     display: flex;
     justify-content: center;
     align-content: center;
     height: 20vh;
-    width: 100vw;
-    margin-bottom: 1rem;
+    width: 500px;
+    margin: 1rem;
     border: 2px solid black;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
         rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -60,7 +67,6 @@ article {
 
         p {
             overflow: hidden;
-            /* make sure it hides the content that overflows */
 
             text-overflow: ellipsis
         }
@@ -74,7 +80,7 @@ article {
 
 
         img {
-            height: 80%;
+            height: 60%;
             display: flex;
             justify-content: center;
 
@@ -85,5 +91,54 @@ article {
 
 article:nth-child(2n+2) {
     background-color: #7d8eb8;
+}
+
+.isActiveProject{
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div:nth-child(2) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+
+            height: 200px;
+            display: flex;
+            justify-content: center;
+margin: 1rem 0;
+        }
+
+    }
+}
+
+@media screen and (max-width: 800px){
+    
+    .isActiveProject{
+        flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    div:nth-child(2) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+    }
+}
 }
 </style>

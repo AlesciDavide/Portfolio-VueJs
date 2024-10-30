@@ -96,7 +96,7 @@ export default{
                 </div>
             </div>
             <div class="boxImgTumblr">
-                <div v-for="(item, index) in slides" key="index">
+                <div v-for="(item, index) in slides" :key="index">
                     <img :class="(index === activeIndex) ? '' : 'biancoNero'" :src="item.image" :alt="item.title"
                         class="imgTumblr" @click="tumblrChangeindex(index)">
                 </div>
