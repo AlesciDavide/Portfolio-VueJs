@@ -1,7 +1,7 @@
 <script>
 import { store } from '../../store.js';
 import Project from '../projectComponents/project.vue';
-import sideBar from '../sideBar.vue';
+import sideBar from '../homepage/sideBar.vue';
 
 
 
