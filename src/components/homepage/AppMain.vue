@@ -3,6 +3,7 @@ import { store } from '../../store.js';
 import sideBar from './sideBar.vue';
 
 
+
 export default {
     data() {
         return {
@@ -12,10 +13,7 @@ export default {
     components: {
         sideBar,
     },
-    methods: {
-
-    },
-
+    
 
 }
 </script>
@@ -59,6 +57,7 @@ export default {
                 </div>
 
             </article>
+            
         </section>
     </div>
 </template>

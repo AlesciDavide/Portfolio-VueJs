@@ -22,19 +22,9 @@ export const store = reactive({
   ],
   projects: [
     {
-      nome: "vite-yu-gi-oh",
-      link: "https://alescidavide.github.io/vite-yu-gi-oh/",
-      src: "/img/vite-yu-gi-oh.png"
-    },
-    {
-      nome: "Dashboard bootstrap",
-      link: "https://alescidavide.github.io/html-css-bootstrap-dashboard/",
-      src: "/img/Dashboard bootstrap.png"
-    },
-    {
-      nome: "vite-comics",
-      link: "https://alescidavide.github.io/vite-comics/",
-      src: "/img/vite-comics.png"
+      nome: "Vue.js - Gobike",
+      link: "https://github.com/AlesciDavide/proj-html-vuejs",
+      src: "/img/Vue.js-Gobike.png"
     },
     {
       nome: "vite-yu-gi-oh",
@@ -52,18 +42,8 @@ export const store = reactive({
       src: "/img/vite-comics.png"
     },
     {
-      nome: "vite-yu-gi-oh",
-      link: "https://alescidavide.github.io/vite-yu-gi-oh/",
-      src: "/img/vite-yu-gi-oh.png"
-    },
-    {
-      nome: "Dashboard bootstrap",
-      link: "https://alescidavide.github.io/html-css-bootstrap-dashboard/",
-      src: "/img/Dashboard bootstrap.png"
-    },
-    {
-      nome: "vite-comics",
-      link: "https://alescidavide.github.io/vite-comics/",
+      nome: "Portfolio-VueJs",
+      link: "https://github.com/AlesciDavide/Portfolio-VueJs",
       src: "/img/vite-comics.png"
     },
     

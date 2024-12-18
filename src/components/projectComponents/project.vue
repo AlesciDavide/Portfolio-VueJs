@@ -11,20 +11,16 @@ export default {
     },
     methods: {
         activeProject(index) {
-      this.activeIndex = this.activeIndex === index ? null : index; 
-    },
+            this.activeIndex = this.activeIndex === index ? null : index;
+        },
     },
 }
 </script>
 
 <template>
 
-    <article 
-    @click="activeProject(index)" 
-    :class="{ isActiveProject: activeIndex === index }" 
-    v-for="(project, index) in store.projects" 
-    :key="index"
-    >
+    <article @click="activeProject(index)" :class="{ isActiveProject: activeIndex === index }"
+        v-for="(project, index) in store.projects" :key="index">
         <div>
             <h1>{{ project.nome }}</h1>
             <p>paragrafo del progetto Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum, quos assumenda
@@ -37,12 +33,10 @@ export default {
 
         </div>
     </article>
-    <!-- <iframe src="https://alescidavide.github.io/html-css-bootstrap-dashboard/" frameborder="0"></iframe> -->
+    
 </template>
 
 <style lang="scss" scoped>
-
-
 article {
     display: flex;
     justify-content: center;
@@ -66,9 +60,12 @@ article {
         padding: 0 1rem;
 
         p {
-            overflow: hidden;
-
-            text-overflow: ellipsis
+            width: 95%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
         }
     }
 
@@ -93,12 +90,13 @@ article:nth-child(2n+2) {
     background-color: #7d8eb8;
 }
 
-.isActiveProject{
+.isActiveProject {
     width: 80vw;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
     div:nth-child(2) {
         width: 50%;
         display: flex;
@@ -111,34 +109,61 @@ article:nth-child(2n+2) {
             height: 200px;
             display: flex;
             justify-content: center;
-margin: 1rem 0;
+            margin: 1rem 0;
         }
 
     }
 }
 
-@media screen and (max-width: 800px){
-    
-    .isActiveProject{
+@media screen and (max-width: 800px) {
+
+    .isActiveProject {
         flex-direction: column;
-    display: flex;
-    justify-content: center;
-    height: 50vh;
-    div:nth-child(2) {
-        width: 50%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        height: max-content + 20px;
 
-
-        img {
-            height: 200px;
+        div:nth-child(2) {
+            width: 95%;
             display: flex;
             justify-content: center;
+            align-items: center;
+
+
+            img {
+                height: 200px;
+                width: 95%;
+                display: flex;
+                justify-content: center;
+
+            }
+
+        }
+    }
+    div:nth-child(2) {
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            img {
+                height: 200px;
+                width: 160px;
+                display: flex;
+                justify-content: center;
+                margin-right: .3rem;
+            }
 
         }
 
+    article{
+        div:nth-child(1){
+            width: 95%;
+            p{
+                -webkit-line-clamp: 6; 
+            }
+        }
     }
-}
 }
 </style>
