@@ -121,7 +121,7 @@ article:nth-child(2n+2) {
         flex-direction: column;
         display: flex;
         justify-content: center;
-        height: 50vh;
+        height: max-content + 20px;
 
         div:nth-child(2) {
             width: 95%;
